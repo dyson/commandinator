@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="0.1"
+VERSION="0.1.1"
 ONELINE_USAGE="$0 application_name application_executable [exit_string]"
 
 HISTORY_BASE="$HOME/.commandinator_history"
@@ -46,7 +46,7 @@ EndHelp
 
 hash()
 {
-	echo "$@" | md5sum | cut -f1 -d' '
+	echo "$@" | openssl md5 | cut -f1 -d' '
 }
 
 while getopts "hv" option
